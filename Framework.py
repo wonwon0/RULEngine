@@ -243,7 +243,10 @@ class Framework(object):
             self.robot_command_sender.send_command(cmd)
             for player in team.players.values():
                 command = Stop(player)
-                self.robot_command_sender.send_command(command)
+
+                #DECOMMENTER SI ON VEUT UTILISER LA COMMANDE STOP DANS GRSIM
+                #COMMENTER SI ON UTLISE LA VRAI COMMUNICATION (SI NON SA FAIT CRASH)
+                #self.robot_command_sender.send_command(command)
         except:
             print("Could not stop players")
             raise StopPlayerError("Au nettoyage il a été impossible d'arrêter les joueurs.")
